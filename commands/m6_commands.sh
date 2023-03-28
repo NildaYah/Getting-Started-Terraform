@@ -7,8 +7,8 @@ export AWS_ACCESS_KEY_ID=YOUR_ACCESS_KEY
 export AWS_SECRET_ACCESS_KEY=YOUR_SECRET_ACCESS_KEY
 
 # For PowerShell
-$env:AWS_ACCESS_KEY_ID="Your_Access_key"
-$env:AWS_SECRET_ACCESS_KEY="Your-secret_key"
+$env:AWS_ACCESS_KEY_ID="YOUR_ACCESS_KEY"
+$env:AWS_SECRET_ACCESS_KEY="YOUR_SECRET_KEY"
 
 # Now we can remove the variables from our configuration
 
