@@ -41,7 +41,7 @@ resource "aws_s3_bucket" "web_bucket" {
 }
     POLICY
 
-  tags = local.common_taggs
+  tags = local.common_tags
 
 }
 resource "aws_s3_bucket_acl" "web_bucket_acl" {
@@ -61,7 +61,7 @@ resource "aws_s3_object" "website_content" {
   key    = each.value
   source = ".${each.value}"
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 
 ## aws_aim_role
@@ -85,7 +85,7 @@ resource "aws_iam_role" "allow_nginx_s3" {
 }
 EOF
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 ## aws_aim_role_policy
 
@@ -119,5 +119,5 @@ resource "aws_iam_instance_profile" "nginx_profile" {
   name = "nginx_profile"
   role = aws_iam_role.allow_nginx_s3.name
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }

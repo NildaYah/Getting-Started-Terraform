@@ -13,13 +13,13 @@ resource "aws_vpc" "vpc" {
   cidr_block           = var.vpc_cidr_block
   enable_dns_hostnames = var.enable_dns_hostnames
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 
 resource "aws_subnet" "subnets" {
@@ -29,7 +29,7 @@ resource "aws_subnet" "subnets" {
   map_public_ip_on_launch = var.map_public_ip_on_launch
   availability_zone       = data.aws_availability_zones.available.names[count.index]
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 
 # ROUTING #
@@ -40,7 +40,7 @@ resource "aws_route_table" "rtb" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 
 resource "aws_route_table_association" "rta-subnets" {
@@ -72,7 +72,7 @@ resource "aws_security_group" "alb_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 resource "aws_security_group" "nginx-sg" {
   name   = "nginx_sg"
@@ -94,6 +94,6 @@ resource "aws_security_group" "nginx-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = local.common_taggs
+  tags = local.common_tags
 }
 

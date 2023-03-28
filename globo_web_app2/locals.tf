@@ -4,7 +4,7 @@ resource "random_integer" "rand" {
 }
 
 locals {
-  common_taggs = {
+  common_tags = {
     company = var.company
     project = "${var.company}-${var.project}"
     billing = var.billing_code
