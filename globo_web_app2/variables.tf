@@ -17,9 +17,9 @@ variable "vpc_cidr_block" {
 }
 
 variable "vpc_subnet_count" {
-  type = number 
+  type        = number
   description = "Number of subnets to create"
-  default = 2
+  default     = 2
 }
 
 variable "vpc_subnets_cidr_block" {
@@ -41,9 +41,9 @@ variable "instance_type" {
 }
 
 variable "instance_count" {
-  type = number
+  type        = number
   description = "Number of instance to create"
-  default = 2
+  default     = 2
 }
 
 variable "company" {

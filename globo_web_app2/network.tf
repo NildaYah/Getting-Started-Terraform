@@ -23,7 +23,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_subnet" "subnets" {
-  count = var.vpc_subnet_count
+  count                   = var.vpc_subnet_count
   cidr_block              = var.vpc_subnets_cidr_block[count.index]
   vpc_id                  = aws_vpc.vpc.id
   map_public_ip_on_launch = var.map_public_ip_on_launch
@@ -44,7 +44,7 @@ resource "aws_route_table" "rtb" {
 }
 
 resource "aws_route_table_association" "rta-subnets" {
-  count = var.vpc_subnet_count
+  count          = var.vpc_subnet_count
   subnet_id      = aws_subnet.subnets[count.index].id
   route_table_id = aws_route_table.rtb.id
 }

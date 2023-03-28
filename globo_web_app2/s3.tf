@@ -54,7 +54,7 @@ resource "aws_s3_bucket_acl" "web_bucket_acl" {
 resource "aws_s3_object" "website_content" {
   for_each = {
     website = "/website/index.html"
-    logo = "/website/Globo_logo_Vert.png"
+    logo    = "/website/Globo_logo_Vert.png"
   }
 
   bucket = aws_s3_bucket.web_bucket.bucket
