@@ -3,8 +3,8 @@
 ##################################################################################
 
 provider "aws" {
-  access_key = "ACCESS_KEY"
-  secret_key = "SECRET_KEY"
+  access_key = "AKIAUAII4CRPZUZVLLZM"
+  secret_key = "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"
   region     = "us-east-1"
 }
 
@@ -29,7 +29,6 @@ resource "aws_vpc" "vpc" {
 
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.vpc.id
-
 }
 
 resource "aws_subnet" "subnet1" {
